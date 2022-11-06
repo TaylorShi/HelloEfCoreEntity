@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Ordering.Domain", "Tesla.Ordering.Domain\Tesla.Ordering.Domain.csproj", "{525AD32C-B381-43D8-8154-00056FEA55B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Gooding.Domain", "Tesla.Gooding.Domain\Tesla.Gooding.Domain.csproj", "{DE6C9330-2264-4A74-A237-A26AC63E2407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Stocking.Domain", "Tesla.Stocking.Domain\Tesla.Stocking.Domain.csproj", "{A21109E1-A818-40CF-A576-96DCA4F7E4B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Membering.Domain", "Tesla.Membering.Domain\Tesla.Membering.Domain.csproj", "{B15BE4A1-CE0C-4348-8C89-1759484F8E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Baseing.Domain", "Tesla.Baseing.Domain\Tesla.Baseing.Domain.csproj", "{83177B02-E478-4B66-A745-A66B0A726F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Paying.Domain", "Tesla.Paying.Domain\Tesla.Paying.Domain.csproj", "{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Reporting.Domain", "Tesla.Reporting.Domain\Tesla.Reporting.Domain.csproj", "{42A7A761-9345-4869-BD77-580F1DA251F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Syncing.Domain", "Tesla.Syncing.Domain\Tesla.Syncing.Domain.csproj", "{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Infrastructure", "1.Infrastructure", "{92524933-99BB-494A-BD7F-C6EBF9D5FA0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Application", "3.Application", "{69ABD492-1935-4477-8A6C-8284AEEDBC50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Interface", "4.Interface", "{C04B5D02-22D3-403F-9848-BFFCEDC03535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Gooding.Interface", "Tesla.Gooding.Interface\Tesla.Gooding.Interface.csproj", "{7D4FA59C-4F75-48FB-8129-4F2C89D1669A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Gooding.Infrastructure", "Tesla.Gooding.Infrastructure\Tesla.Gooding.Infrastructure.csproj", "{AAF6DB13-A075-4689-A969-40A14608EEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Gooding.Application", "Tesla.Gooding.Application\Tesla.Gooding.Application.csproj", "{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{525AD32C-B381-43D8-8154-00056FEA55B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525AD32C-B381-43D8-8154-00056FEA55B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525AD32C-B381-43D8-8154-00056FEA55B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525AD32C-B381-43D8-8154-00056FEA55B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE6C9330-2264-4A74-A237-A26AC63E2407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6C9330-2264-4A74-A237-A26AC63E2407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6C9330-2264-4A74-A237-A26AC63E2407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6C9330-2264-4A74-A237-A26AC63E2407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21109E1-A818-40CF-A576-96DCA4F7E4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21109E1-A818-40CF-A576-96DCA4F7E4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21109E1-A818-40CF-A576-96DCA4F7E4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21109E1-A818-40CF-A576-96DCA4F7E4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B15BE4A1-CE0C-4348-8C89-1759484F8E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15BE4A1-CE0C-4348-8C89-1759484F8E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15BE4A1-CE0C-4348-8C89-1759484F8E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15BE4A1-CE0C-4348-8C89-1759484F8E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83177B02-E478-4B66-A745-A66B0A726F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83177B02-E478-4B66-A745-A66B0A726F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83177B02-E478-4B66-A745-A66B0A726F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83177B02-E478-4B66-A745-A66B0A726F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A7A761-9345-4869-BD77-580F1DA251F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A7A761-9345-4869-BD77-580F1DA251F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A7A761-9345-4869-BD77-580F1DA251F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A7A761-9345-4869-BD77-580F1DA251F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4FA59C-4F75-48FB-8129-4F2C89D1669A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4FA59C-4F75-48FB-8129-4F2C89D1669A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4FA59C-4F75-48FB-8129-4F2C89D1669A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4FA59C-4F75-48FB-8129-4F2C89D1669A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF6DB13-A075-4689-A969-40A14608EEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF6DB13-A075-4689-A969-40A14608EEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF6DB13-A075-4689-A969-40A14608EEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF6DB13-A075-4689-A969-40A14608EEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{525AD32C-B381-43D8-8154-00056FEA55B7} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{DE6C9330-2264-4A74-A237-A26AC63E2407} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{A21109E1-A818-40CF-A576-96DCA4F7E4B9} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{B15BE4A1-CE0C-4348-8C89-1759484F8E97} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{83177B02-E478-4B66-A745-A66B0A726F90} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{95EB1F3F-E704-4E2D-BC24-1DBCD98FF845} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{42A7A761-9345-4869-BD77-580F1DA251F5} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{127CA414-5B98-4A1B-8B9B-ED40DE4E97F9} = {F9567A2F-7D0F-4BEC-98DC-EEAB7C388A05}
+		{7D4FA59C-4F75-48FB-8129-4F2C89D1669A} = {C04B5D02-22D3-403F-9848-BFFCEDC03535}
+		{AAF6DB13-A075-4689-A969-40A14608EEA7} = {92524933-99BB-494A-BD7F-C6EBF9D5FA0E}
+		{7EF2FFD0-E500-4A12-AF12-D222BEFF44AD} = {69ABD492-1935-4477-8A6C-8284AEEDBC50}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39840374-5FA6-49BA-877F-69548AF9D803}
+	EndGlobalSection
+EndGlobal
