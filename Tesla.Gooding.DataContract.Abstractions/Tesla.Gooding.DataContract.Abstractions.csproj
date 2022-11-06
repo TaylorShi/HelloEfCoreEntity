@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HelloSharedProject\Tesla.Framework.Domain.Abstractions\Tesla.Framework.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\HelloSharedProject\Tesla.Framework.DataContract.Abstractions\Tesla.Framework.DataContract.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
