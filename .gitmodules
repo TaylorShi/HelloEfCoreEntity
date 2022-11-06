@@ -1,0 +1,3 @@
+[submodule "HelloSharedProject"]
+	path = HelloSharedProject
+	url = https://github.com/TaylorShi/HelloSharedProject.git
