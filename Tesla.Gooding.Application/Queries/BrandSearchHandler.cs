@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
-using Tesla.Framework.Core;
 using Tesla.Gooding.DataContract.BrandModule.DTO;
 using Tesla.Gooding.Domain.AggregatesModel.BrandAggregates;
 using Tesla.Gooding.Infrastructure.Contexts;
 using MediatR;
 using AutoMapper;
 using Tesla.Framework.Infrastructure.Core.Extensions;
-using Tesla.Gooding.Application.CheckEvents;
+using Tesla.Gooding.Application.Check.BrandModule;
+using Tesla.Framework.DataContract.Abstractions.QueryModule.DTO;
 
 namespace Tesla.Gooding.Application.Queries
 {
@@ -30,7 +30,7 @@ namespace Tesla.Gooding.Application.Queries
         public async Task<PagedList<BrandDto>> Handle(BrandSearch request, CancellationToken cancellationToken)
         {
             var tenantId = await _mediator.Send(new CheckParseTenantCommand(request.TenantId));
-            await _mediator.Publish(new CheckPageQueryDomainEvent(request));
+            await _mediator.Send(new CheckPageQueryCommand(request));
             FilterParams(request, out var brandIds, out var brandNameList, out var brandCodeList);
 
             IQueryable<Brand> query = _goodingSlaveContext.Brands
@@ -38,6 +38,7 @@ namespace Tesla.Gooding.Application.Queries
                 .WhereIf(brandIds != null && brandIds.Any(), x => brandIds.Contains(x.Id))
                 .WhereIf(brandCodeList != null && brandCodeList.Any(), x => brandCodeList.Contains(x.Code))
                 .WhereIf(brandNameList != null && brandNameList.Any(), x => brandNameList.Contains(x.Name))
+                .Where(x => x.IsDeleted == false)
                 .OrderByDescending(x => x.CreateOn);
 
             return await query.Paged<Brand, BrandDto>(request.PageIndex, request.PageSize, _configurationProvider, cancellationToken);

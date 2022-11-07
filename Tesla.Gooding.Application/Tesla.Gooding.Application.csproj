@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tesla.Gooding.DataContract\Tesla.Gooding.DataContract.csproj" />
-    <ProjectReference Include="..\Tesla.Gooding.Infrastructure\Tesla.Gooding.Infrastructure.csproj" />
+    <ProjectReference Include="..\Tesla.Gooding.Application.Check\Tesla.Gooding.Application.Check.csproj" />
   </ItemGroup>
 
   <ItemGroup>

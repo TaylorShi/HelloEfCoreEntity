@@ -4,9 +4,9 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Tesla.Framework.Core;
+using Tesla.Framework.DataContract.Abstractions.QueryModule.DTO;
 using Tesla.Framework.Infrastructure.Core.Extensions;
-using Tesla.Gooding.Application.CheckEvents;
+using Tesla.Gooding.Application.Check.BrandModule;
 using Tesla.Gooding.DataContract.BrandModule.DTO;
 using Tesla.Gooding.Domain.AggregatesModel.BrandAggregates;
 using Tesla.Gooding.Infrastructure.Contexts;
@@ -29,7 +29,7 @@ namespace Tesla.Gooding.Application.Queries
         public async Task<PagedList<BrandDto>> Handle(BrandQuery request, CancellationToken cancellationToken)
         {
             var tenantId = await _mediator.Send(new CheckParseTenantCommand(request.TenantId));
-            await _mediator.Publish(new CheckPageQueryDomainEvent(request));
+            await _mediator.Send(new CheckPageQueryCommand(request));
             FilterParams(request, out var brandId, out var brandName, out var brandCode);
 
             IQueryable<Brand> query = _goodingSlaveContext.Brands
@@ -37,7 +37,8 @@ namespace Tesla.Gooding.Application.Queries
                 .WhereIf(brandId != null, x => x.Id == brandId)
                 .WhereIf(!string.IsNullOrEmpty(brandCode), x => x.Code == brandCode)
                 .WhereIf(!string.IsNullOrEmpty(brandName), x => x.Name.Contains(brandName))
-                .OrderByDescending(x=>x.CreateOn);
+                .Where(x => x.IsDeleted == false)
+                .OrderByDescending(x => x.CreateOn);
 
             return await query.Paged<Brand, BrandDto>(request.PageIndex, request.PageSize, _configurationProvider, cancellationToken);
         }

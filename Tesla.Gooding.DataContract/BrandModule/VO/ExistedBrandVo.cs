@@ -7,18 +7,13 @@ using Tesla.Gooding.DataContract.Abstractions.BrandModule.VO;
 namespace Tesla.Gooding.DataContract.BrandModule.VO
 {
     /// <summary>
-    /// 创建品牌
+    /// 存在品牌
     /// </summary>
-    public class CreateBrandVo : TenantVo, IBrandCreateVo
+    public class ExistedBrandVo : TenantVo, IBrandVo
     {
         /// <summary>
-        /// 品牌名称
+        /// 品牌Id
         /// </summary>
-        public string BrandName { get; set; }
-
-        /// <summary>
-        /// 品牌编码
-        /// </summary>
-        public string BrandCode { get; set; }
+        public string BrandId { get; set; }
     }
 }

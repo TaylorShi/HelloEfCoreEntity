@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Tesla.Gooding.Application.CheckEvents;
-using Tesla.Gooding.Application.Extensions;
+using Tesla.Framework.Core.Extensions;
 using Tesla.Gooding.DataContract.Common;
 
-namespace Tesla.Gooding.Application.CheckEventHandlers
+namespace Tesla.Gooding.Application.Check.BrandModule
 {
     internal class CheckParseTenantCommandHandler : IRequestHandler<CheckParseTenantCommand, long>
     {
@@ -20,7 +19,7 @@ namespace Tesla.Gooding.Application.CheckEventHandlers
                 !long.TryParse(request.TenantId, out tenantId))
             {
                 // 商户信息缺失
-                EnumCode.ErrTenantIdNull.ThrowLanMessage();
+                MessageCode.ErrTenantIdNull.ThrowLanMessage();
             }
 
             return await Task.FromResult(tenantId);

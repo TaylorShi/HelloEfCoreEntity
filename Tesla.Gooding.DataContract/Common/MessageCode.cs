@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Tesla.Gooding.DataContract.Common
 {
-    public enum EnumCode
+    /// <summary>
+    /// 消息编码
+    /// </summary>
+    public enum MessageCode
     {
         /// <summary>
         /// 缺少参数
@@ -68,10 +71,22 @@ namespace Tesla.Gooding.DataContract.Common
         ErrBrandCodeNull = 130001,
 
         /// <summary>
+        /// 品牌ID缺失
+        /// </summary>
+        [Description("品牌ID缺失")]
+        ErrBrandIdNull = 130002,
+
+        /// <summary>
+        /// 品牌不存在
+        /// </summary>
+        [Description("品牌不存在")]
+        ErrBrandNotExist = 130003,
+
+        /// <summary>
         /// 品牌编码重复
         /// </summary>
         [Description("品牌编码重复")]
-        ErrBrandCodeExisted = 130002,
+        ErrBrandCodeExisted = 130004,
 
         #endregion
     }

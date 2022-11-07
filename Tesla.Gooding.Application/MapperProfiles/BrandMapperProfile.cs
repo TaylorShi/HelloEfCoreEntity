@@ -22,12 +22,11 @@ namespace Tesla.Gooding.Application.MapperProfiles
                 .ForMember(d => d.BrandId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(d => d.BrandCode, opt => opt.MapFrom(src => src.Code))
                 .ForMember(d => d.BrandName, opt => opt.MapFrom(src => src.Name))
-                .ForMember(d => d.BrandLogo, opt => opt.MapFrom(src => src.Logo))
+                .ForMember(d => d.TenantId, opt => opt.MapFrom(src => src.TenantId.ToString()))
                 .ReverseMap();
             CreateMap<Brand, CreateBrandVo>()
                 .ForMember(d => d.BrandCode, opt => opt.MapFrom(src => src.Code))
                 .ForMember(d => d.BrandName, opt => opt.MapFrom(src => src.Name))
-                .ForMember(d => d.BrandLogo, opt => opt.MapFrom(src => src.Logo))
                 .ReverseMap();
         }
     }

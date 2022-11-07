@@ -1,25 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Xml.Linq;
 using Tesla.Framework.Domain.Abstractions;
-using Tesla.Gooding.Domain.Events.BrandAggregates;
 
 namespace Tesla.Gooding.Domain.AggregatesModel.BrandAggregates
 {
     /// <summary>
-    /// 品牌
+    /// 品牌图像
     /// </summary>
-    public class Brand : Entity<Guid>, ITenantIdentity, IDeleteEntity, IOperateRecord, IAggregateRoot
+    public class BrandImage : Entity<Guid>, ITenantIdentity, IDeleteEntity, IOperateRecord, IAggregateRoot
     {
         #region Field
 
         /// <summary>
-        /// 品牌名
-        /// </summary>
-        public string Name { get; private set; }
-
-        /// <summary>
         /// 品牌编码
         /// </summary>
-        public string Code { get; private set; } 
+        public string Code { get; private set; }
+
+        /// <summary>
+        /// 图片类型
+        /// </summary>
+        public BrandImageType Type { get; private set; }
+
+        /// <summary>
+        /// 图片地址
+        /// </summary>
+        public string Url { get; private set; } 
 
         #endregion
 
@@ -71,7 +78,6 @@ namespace Tesla.Gooding.Domain.AggregatesModel.BrandAggregates
             this.CreateOn = DateTime.Now;
             this.UpdateBy = userId;
             this.UpdateOn = DateTime.Now;
-            this.AddDomainEvent(new CheckBrandCodeExistedDomainEvent(tenantId, Code));
         }
 
         /// <summary>
@@ -90,18 +96,17 @@ namespace Tesla.Gooding.Domain.AggregatesModel.BrandAggregates
         /// </summary>
         /// <param name="tenantId"></param>
         /// <param name="userId"></param>
-        /// <param name="name"></param>
         /// <param name="code"></param>
-        public void Modify(long tenantId, string userId, string name, string code)
+        /// <param name="type"></param>
+        /// <param name="url"></param>
+        public void Modify(long tenantId, string userId, string code, BrandImageType type, string url)
         {
-            this.Name = name;
             this.Code = code;
+            this.Type = type;
+            this.Url = url;
+
             this.UpdateBy = userId;
             this.UpdateOn = DateTime.Now;
-            if (!Equals(code, this.Code))
-            {
-                this.AddDomainEvent(new CheckBrandCodeExistedDomainEvent(tenantId, code));
-            }
         }
 
         /// <summary>

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Tesla.Framework.DataContract.Abstractions.TenantModule;
-using Tesla.Gooding.DataContract.Abstractions.BrandModule;
+using Tesla.Framework.DataContract.Abstractions.TenantModule.VO;
+using Tesla.Gooding.DataContract.Abstractions.BrandModule.VO;
 
 namespace Tesla.Gooding.DataContract.BrandModule.VO
 {
     /// <summary>
     /// 分页查询品牌
     /// </summary>
-    public class BrandPagedQueryVo : PublicTenantPageVo, IBrandVo
+    public class PagedBrandQueryVo : TenantPageVo, IBrandQueryVo
     {
         /// <summary>
         /// 品牌Id

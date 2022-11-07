@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tesla.Gooding.Application.CheckEvents
+namespace Tesla.Gooding.Application.Check.BrandModule
 {
-    internal class CheckParseTenantCommand : IRequest<long>
+    public class CheckParseTenantCommand : IRequest<long>
     {
         /// <summary>
         /// 商户ID

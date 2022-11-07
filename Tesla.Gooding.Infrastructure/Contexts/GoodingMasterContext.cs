@@ -18,11 +18,16 @@ namespace Tesla.Gooding.Infrastructure.Contexts
 
         public DbSet<Brand> Brands { get; set; }
 
+        //public DbSet<BrandImage> BrandImages { get; set; }
+
+        //public DbSet<BrandUrl> BrandUrls { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // 注册领域模型与数据库的映射关系
             modelBuilder.ApplyConfiguration(new BrandEntityTypeConfiguration());
-
+            modelBuilder.ApplyConfiguration(new BrandImageEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new BrandUrlEntityTypeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

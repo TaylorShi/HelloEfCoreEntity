@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Tesla.Framework.Core;
-using Tesla.Gooding.Application.Commands;
+using Tesla.Framework.DataContract.Abstractions.QueryModule.DTO;
+using Tesla.Gooding.Application.Commands.BrandModule;
 using Tesla.Gooding.Application.Queries;
 using Tesla.Gooding.DataContract.BrandModule.DTO;
 
@@ -37,6 +37,39 @@ namespace Tesla.Gooding.Interface.Controllers.v1
         public async Task<bool> Create([FromBody]CreateBrandCommand cmd)
         {
             return await _mediator.Send(cmd, HttpContext.RequestAborted);
+        }
+
+        /// <summary>
+        /// 删除品牌
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<bool> Delete([FromBody]DeleteBrandCommand cmd)
+        {
+            return await _mediator.Send(cmd, HttpContext.RequestAborted);
+        }
+
+        /// <summary>
+        /// 恢复品牌
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<bool> Recovery([FromBody]RecoveryBrandCommand cmd)
+        {
+            return await _mediator.Send(cmd, HttpContext.RequestAborted);
+        }
+
+        /// <summary>
+        /// 清空品牌
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<bool> Clear([FromBody]ClearBrandCommand cmd)
+        {
+            return await _mediator.Send(cmd, HttpContext.RequestAborted); ;
         }
 
         /// <summary>

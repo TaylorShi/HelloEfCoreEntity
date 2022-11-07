@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tesla.Gooding.DataContract.Abstractions.BrandModule
+namespace Tesla.Gooding.DataContract.Abstractions.BrandModule.VO
 {
     /// <summary>
-    /// 品牌信息接口
+    /// 品牌查询接口
     /// </summary>
-    public interface IBrand
+    public interface IBrandQueryVo
     {
         /// <summary>
         /// 品牌Id

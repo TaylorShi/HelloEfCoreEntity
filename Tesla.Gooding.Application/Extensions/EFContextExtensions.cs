@@ -26,16 +26,20 @@ namespace Tesla.Gooding.Application.Extensions
             // 添加主上下文
             services.AddDbContext<GoodingMasterContext>(optionsAction =>
             {
-                optionsAction.UseMySql(masterConnectionString, serverVersion, options => options.EnableRetryOnFailure
-                (
-                    maxRetryCount: 3,
-                    maxRetryDelay: TimeSpan.FromSeconds(10),
-                    errorNumbersToAdd: new List<int> { 0 }
-                ))
+                optionsAction.UseMySql(masterConnectionString, serverVersion, options =>
+                {
+                    options.EnableRetryOnFailure
+                    (
+                        maxRetryCount: 3,
+                        maxRetryDelay: TimeSpan.FromSeconds(10),
+                        errorNumbersToAdd: new List<int> { 0 }
+                    );
+                    options.MigrationsAssembly("Tesla.Gooding.Interface");
+                })
                 // 根据日志级别输出到控制台
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 // 日志输出记录敏感数据
-                .EnableSensitiveDataLogging()
+                //.EnableSensitiveDataLogging()
                 // 日志输出记录详细异常
                 .EnableDetailedErrors();
             });
@@ -52,7 +56,7 @@ namespace Tesla.Gooding.Application.Extensions
                 // 根据日志级别输出到控制台
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 // 日志输出记录敏感数据
-                .EnableSensitiveDataLogging()
+                //.EnableSensitiveDataLogging()
                 // 日志输出记录详细异常
                 .EnableDetailedErrors();
             });

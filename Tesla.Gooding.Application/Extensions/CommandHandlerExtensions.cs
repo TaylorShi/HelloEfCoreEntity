@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Tesla.Gooding.Application.Commands;
+using Tesla.Gooding.Application.Check.BrandModule;
+using Tesla.Gooding.Application.Commands.BrandModule;
 using Tesla.Gooding.Domain.AggregatesModel.BrandAggregates;
 using Tesla.Gooding.Infrastructure.Contexts;
 
@@ -19,7 +20,7 @@ namespace Tesla.Gooding.Application.Extensions
         public static IServiceCollection AddCommandHandlers(this IServiceCollection services)
         {
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(GoodingContextTransactionBehavior<,>));
-            return services.AddMediatR(typeof(Brand).Assembly, typeof(CreateBrandCommand).Assembly);
+            return services.AddMediatR(typeof(Brand).Assembly, typeof(CreateBrandCommand).Assembly, typeof(CheckBrandCreateCommand).Assembly);
         }
     }
 }

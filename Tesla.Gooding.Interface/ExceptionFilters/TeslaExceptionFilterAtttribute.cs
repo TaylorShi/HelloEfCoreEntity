@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Tesla.Framework.Core;
+using Tesla.Framework.Core.Messages;
 
 namespace Tesla.Gooding.Interface.ExceptionFilters
 {
