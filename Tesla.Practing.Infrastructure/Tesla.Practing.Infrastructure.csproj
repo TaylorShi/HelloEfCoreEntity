@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HelloSharedProject\Tesla.Framework.Infrastructure.Core\Tesla.Framework.Infrastructure.Core.csproj" />
+    <ProjectReference Include="..\Tesla.Practing.Domain\Tesla.Practing.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
