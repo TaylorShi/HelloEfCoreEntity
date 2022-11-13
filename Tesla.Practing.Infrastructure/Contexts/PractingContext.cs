@@ -2,6 +2,7 @@
 using Tesla.Practing.Domain.AggregatesModel.BlogAggregates;
 using Tesla.Practing.Domain.AggregatesModel.OrderAggregates;
 using Tesla.Practing.Domain.AggregatesModel.PassportAggregates;
+using Tesla.Practing.Domain.AggregatesModel.PersonAggregates;
 
 namespace Tesla.Practing.Infrastructure.Contexts
 {
@@ -20,6 +21,7 @@ namespace Tesla.Practing.Infrastructure.Contexts
         public DbSet<Post> Posts { get; set; }
         public DbSet<BlogDetail> BlogDetails { get; set; }
         public DbSet<Passport> Passports { get; set; }
+        public DbSet<Person> Persons { get; set; }
         //public DbSet<BlogAsset> BlogAssets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

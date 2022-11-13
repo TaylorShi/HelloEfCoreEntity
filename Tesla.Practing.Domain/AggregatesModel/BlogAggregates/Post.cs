@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,6 +13,7 @@ namespace Tesla.Practing.Domain.AggregatesModel.BlogAggregates
     /// 随笔
     /// </summary>
     [Table("posts")]
+    [Index(nameof(BlogId))]
     public class Post : Entity<long>, IAggregateRoot
     {
         /// <summary>
@@ -26,5 +29,17 @@ namespace Tesla.Practing.Domain.AggregatesModel.BlogAggregates
         [MinLength(5), MaxLength(2000)]
         [Column("postcontent", TypeName = "nvarchar")]
         public string Content { get; private set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime DateCreated { get; private set; }
+
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime DateModifyed { get; private set; }
     }
 }

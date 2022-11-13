@@ -3,6 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Threading.Tasks;
 using Tesla.Practing.Infrastructure.Contexts;
 
 namespace Tasla.ValueObject.Console
@@ -11,6 +14,60 @@ namespace Tasla.ValueObject.Console
     {
         static void Main(string[] args)
         {
+            //ImmutableStack<int> ints = ImmutableStack<int>.Empty;
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    ints = ints.Push(i);
+            //}
+            //foreach (var item in ints)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
+
+            //ImmutableArray<int> int2s = ImmutableArray<int>.Empty;
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    int2s = int2s.Add(i);
+            //}
+            //foreach (var item in int2s)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
+
+            //ImmutableArray<int> int2s = ImmutableArray<int>.Empty;
+            ////List<int> int3s = new List<int>();
+            //var task1 = Task.Run(() =>
+            //{
+            //    for (int i = 0; i < 20; i++)
+            //    {
+            //        int2s = int2s.Add(i);
+            //        //int3s.Add(i);
+            //    }
+            //});
+            //var task2 = Task.Run(() =>
+            //{
+            //    for (int i = 0; i < 200; i++)
+            //    {
+            //        int2s = int2s.Add(i);
+            //        //int3s.Add(i);
+            //    }
+            //});
+            //var task3 = Task.Run(() =>
+            //{
+            //    for (int i = 0; i < 2; i++)
+            //    {
+            //        int2s = int2s.Add(i);
+            //        //int3s.Add(i);
+            //    }
+            //});
+
+            //Task.WhenAll(task1, task2, task3).Wait();
+
+            //foreach (var item in int2s)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
+
             // 创建配置构建器
             IConfigurationBuilder builder = new ConfigurationBuilder();
             // 添加Json文件数据源

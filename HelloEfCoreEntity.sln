@@ -51,13 +51,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesla.Gooding.Application.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Practice", "5.Practice", "{CE4F4B86-8591-4300-8475-CE3A09CFB15F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Practing.Domain", "Tesla.Practing.Domain\Tesla.Practing.Domain.csproj", "{0AA3FF33-B129-4425-8C13-CF85E84F4D87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesla.Practing.Domain", "Tesla.Practing.Domain\Tesla.Practing.Domain.csproj", "{0AA3FF33-B129-4425-8C13-CF85E84F4D87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasla.ValueObject.Comparer", "Tasla.ValueObject.Comparer\Tasla.ValueObject.Comparer.csproj", "{C8DE0C20-B9BF-493E-AE9B-EAD939FC72DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasla.ValueObject.Comparer", "Tasla.ValueObject.Comparer\Tasla.ValueObject.Comparer.csproj", "{C8DE0C20-B9BF-493E-AE9B-EAD939FC72DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesla.Practing.Infrastructure", "Tesla.Practing.Infrastructure\Tesla.Practing.Infrastructure.csproj", "{93C5AC47-7109-41F1-B3A7-0A1200FEFAA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesla.Practing.Infrastructure", "Tesla.Practing.Infrastructure\Tesla.Practing.Infrastructure.csproj", "{93C5AC47-7109-41F1-B3A7-0A1200FEFAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasla.ValueObject.Console", "Tasla.ValueObject.Console\Tasla.ValueObject.Console.csproj", "{1AC739AB-A6B7-4446-9637-17BEF3E97E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasla.ValueObject.Console", "Tasla.ValueObject.Console\Tasla.ValueObject.Console.csproj", "{1AC739AB-A6B7-4446-9637-17BEF3E97E75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasla.Snowflake.Console", "Tasla.Snowflake.Console\Tasla.Snowflake.Console.csproj", "{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasla.Querying.Console", "Tasla.Querying.Console\Tasla.Querying.Console.csproj", "{7D15E339-B713-4216-86FB-932CF138DA73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +157,14 @@ Global
 		{1AC739AB-A6B7-4446-9637-17BEF3E97E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC739AB-A6B7-4446-9637-17BEF3E97E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC739AB-A6B7-4446-9637-17BEF3E97E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D15E339-B713-4216-86FB-932CF138DA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D15E339-B713-4216-86FB-932CF138DA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D15E339-B713-4216-86FB-932CF138DA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D15E339-B713-4216-86FB-932CF138DA73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +192,8 @@ Global
 		{C8DE0C20-B9BF-493E-AE9B-EAD939FC72DA} = {CE4F4B86-8591-4300-8475-CE3A09CFB15F}
 		{93C5AC47-7109-41F1-B3A7-0A1200FEFAA1} = {CE4F4B86-8591-4300-8475-CE3A09CFB15F}
 		{1AC739AB-A6B7-4446-9637-17BEF3E97E75} = {CE4F4B86-8591-4300-8475-CE3A09CFB15F}
+		{4DC83E94-24F8-468E-8B4A-0FA3840AF1D0} = {CE4F4B86-8591-4300-8475-CE3A09CFB15F}
+		{7D15E339-B713-4216-86FB-932CF138DA73} = {CE4F4B86-8591-4300-8475-CE3A09CFB15F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39840374-5FA6-49BA-877F-69548AF9D803}

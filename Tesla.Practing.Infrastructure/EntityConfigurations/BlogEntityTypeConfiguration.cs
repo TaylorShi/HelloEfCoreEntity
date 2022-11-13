@@ -8,12 +8,16 @@ using Tesla.Practing.Domain.AggregatesModel.OrderAggregates;
 
 namespace Tesla.Practing.Infrastructure.EntityConfigurations
 {
-    internal class BlogEntityTypeConfiguration : IEntityTypeConfiguration<Blog>
-    {
-        public void Configure(EntityTypeBuilder<Blog> builder)
-        {
-            builder.ToTable("blogs");
-            builder.Property(p => p.Url).IsRequired();
-        }
-    }
+    //internal class BlogEntityTypeConfiguration : IEntityTypeConfiguration<Blog>
+    //{
+    //    public void Configure(EntityTypeBuilder<Blog> builder)
+    //    {
+    //        builder.ToTable("blogs");
+    //        builder.Property(p => p.Url).IsRequired();
+    //        builder.Property(p => p.Rating).HasDefaultValue(3);
+    //        builder.Property(p => p.TimeStamp).IsRowVersion();
+    //        builder.Property<DateTime>("LastUpdated");
+    //        //builder.Property(p => p.Created).HasDefaultValueSql("GETDATE()");
+    //    }
+    //}
 }
