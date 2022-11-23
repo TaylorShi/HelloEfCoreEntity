@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
-using Tasla.Snowflake.Console.Extensions;
+using Tasla.Querring.Console.Extensions;
 
-namespace Tasla.Snowflake.Console
+namespace Tasla.Querring.Console
 {
     internal class Program
     {
@@ -15,11 +14,6 @@ namespace Tasla.Snowflake.Console
             configurationRoot = ConfigHelper.GetConfigurationRoot();
             services = new ServiceCollection();
             services.AddMYSQLDataBase(configurationRoot);
-            services.AddSnowflakeServices(configurationRoot);
-            System.Console.WriteLine("ReadyDatabase");
-            var taskAddBlog = services.AddBlog();
-            Task.WhenAll(taskAddBlog).Wait();
-            System.Console.WriteLine("AddBlog");
             System.Console.ReadKey();
         }
     }
