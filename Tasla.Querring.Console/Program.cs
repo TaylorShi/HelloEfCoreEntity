@@ -14,6 +14,7 @@ namespace Tasla.Querring.Console
             configurationRoot = ConfigHelper.GetConfigurationRoot();
             services = new ServiceCollection();
             services.AddMYSQLDataBase(configurationRoot);
+            services.BuildServiceProvider().AddSimpleQuerings();
             System.Console.ReadKey();
         }
     }
