@@ -11,6 +11,11 @@ using AutoMapper;
 using Tesla.Framework.Infrastructure.Core.Extensions;
 using Tesla.Gooding.Application.Check.BrandModule;
 using Tesla.Framework.DataContract.Abstractions.QueryModule.DTO;
+using System.Xml.Linq;
+using Microsoft.Extensions.Configuration;
+using AutoMapper.QueryableExtensions;
+using IConfigurationProvider = AutoMapper.IConfigurationProvider;
+using Microsoft.EntityFrameworkCore;
 
 namespace Tesla.Gooding.Application.Queries
 {
@@ -33,7 +38,20 @@ namespace Tesla.Gooding.Application.Queries
             await _mediator.Send(new CheckPageQueryCommand(request));
             FilterParams(request, out var brandIds, out var brandNameList, out var brandCodeList);
 
-            IQueryable<Brand> query = _goodingSlaveContext.Brands
+            //var list = from b in _goodingSlaveContext.Brands
+            //           join bi in _goodingSlaveContext.BrandImages on b.Code equals bi.Code
+            //           join bu in _goodingSlaveContext.BrandUrls on b.Code equals bu.Code
+            //           select new
+            //           {
+            //               Name = b.Name,
+            //               Code = b.Code,
+            //               ImageUrl = bi.Url,
+            //               Url = bu.Url
+            //           };
+
+            //var paged = list.Skip(request.PageIndex - 1).Take(request.PageSize).ProjectTo<BrandDto>(_configurationProvider).ToListAsync(cancellationToken);
+
+            IQueryable <Brand> query = _goodingSlaveContext.Brands
                 .WhereIf(tenantId > 0, x => x.TenantId == tenantId)
                 .WhereIf(brandIds != null && brandIds.Any(), x => brandIds.Contains(x.Id))
                 .WhereIf(brandCodeList != null && brandCodeList.Any(), x => brandCodeList.Contains(x.Code))
